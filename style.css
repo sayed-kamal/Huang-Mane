@@ -1,0 +1,295 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: Tahoma, Arial;
+}
+.container{
+    margin: 20px auto;
+    width: 95%;
+    padding: 5px
+
+}
+.container .game_info{
+    display: flex
+;
+    justify-content: space-between;
+}
+/* .container .category{} */
+.container .category span{
+    font-weight: bold;
+    color: rgba(255, 0, 0, 0.63);
+    text-transform: capitalize;
+} 
+.row{
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+@media (max-width: 756px) {
+    .row{
+        display: block;
+  }
+}
+.row .huangMane_draw{
+    flex: 1;
+     background-color: #ddd;
+    height: 300px;
+}
+.the-draw{
+    width: 80px;
+    position: relative;
+    height: 80%;
+     margin:10px auto;
+    border-bottom: 4px solid;
+    /* display: none; */
+}
+.the-draw.wrong1{
+display: block;
+}
+ .the-draw .stand{
+    background-color: black;
+    width: 5px;
+    height: 100%;
+    left: 10px;
+    position: absolute;
+   display: none;
+ }
+ .the-draw.wrong1 .stand{
+    display: block;
+ }
+.the-draw .hung{
+    position: absolute;
+    background-color: black;
+    width: 110%;
+    height: 5px;
+    bottom: 90%;
+    left: 10px;
+    display: none;
+}
+.the-draw.wrong2 .hung{
+    display: block;
+ }
+.the-draw .rope{
+    position: absolute;
+    background-color: black;
+    top: 20px;
+    left: 87px;
+    width: 5px;
+    height: 20px;
+    display: none;
+}
+.the-draw.wrong3 .rope{
+    display: block;
+ }
+.the-draw .rope::before{
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 5px dashed ;
+    right: -21px;
+    top: 20px;
+}
+.huangMane_draw .mane{
+    position: relative;
+    height: 40px;
+    left: 100%;
+    top: 50px;
+}
+.huangMane_draw .mane .head{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border-radius: 50%;
+    left: -6px;
+    display: none;
+}
+.the-draw.wrong4 .head{
+    display: block;
+ }
+.huangMane_draw .mane .Body{
+    position: absolute;
+    width: 4px;
+    height: 100px;
+    background-color: black;
+    top: 28px;
+    left: 6px;
+    display: none;
+}
+.the-draw.wrong5 .Body{
+    display: block;
+ }
+.huangMane_draw .mane .hades,
+.huangMane_draw .mane .hades::after,
+.huangMane_draw .mane .legs,
+.huangMane_draw .mane .legs::after{
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    
+}
+.huangMane_draw .mane .hades{
+    left: 5px;
+    transform: rotate(45deg);
+    top: 70px;
+    display: none;
+}
+.the-draw.wrong6 .hades{
+    display: block;
+ }
+.huangMane_draw .mane .hades::after{
+    content: '';
+    transform: rotate(-90deg);
+    left: -16px;
+    top: 17px;
+}
+
+.huangMane_draw .mane .legs{
+    top: 134px;
+    transform: rotate(45deg);
+    left: 4px;
+    display: none;
+}
+.the-draw.wrong7 .legs{
+    display: block;
+ }
+.huangMane_draw .mane .legs::after{
+    content: '';
+    transform: rotate(-90deg);
+    left: -16px;
+    top: 17px;
+}
+.characters{
+    flex: 1;
+    padding: 20px;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+.stop_Event{
+    pointer-events: none;
+}
+.letter_box{
+    margin: 2px;
+    padding: 4px;
+    cursor: pointer;
+    background-color: lightseagreen;
+    font-size: 20px;
+    color: white;
+    border-radius: 2px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+    transition: background-color 0.5s;
+}
+.clicked{
+    background-color: #333;
+    opacity: 0.3;
+    pointer-events: none;
+}
+.letter_box:hover{
+    background-color: rgba(32, 178, 171, 0.641);
+}
+@media (max-width: 485px) {
+    .letter_box{
+    width: 35px;
+    height: 35px;
+  }
+}
+.letters{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: #f8f8f8;
+    min-height: 110px;
+}
+/* .letters span{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    background-color: #fdfdfd;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 3px solid #222;
+     transition: .5s;
+} */
+.ele_paly{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    background-color: #fdfdfd;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 3px solid rgba(34, 34, 34, 0.318);
+     transition: .5s;
+}
+.ele_empty{
+    width: 60px;
+    height: 60px;
+    background: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+.ele_empty::before{
+    content: '';
+    position: absolute;
+    width: 70%;
+    height: 5px;
+    background-color: rgba(34, 34, 34, 0.413);
+}
+.Lose,
+.Win{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-shadow: 0 0 10px 0 #ddd;
+    transition:all .3s;
+    display: none;
+}
+.Lose h1{
+    letter-spacing: 7px;
+    color: red;
+    
+}
+.Win h1{
+    letter-spacing: 7px;
+    color: green;
+}
+.YourLose{
+    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    transition: all .5s;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+}
+.YourLose:hover{
+    font-size: 22px;
+}
